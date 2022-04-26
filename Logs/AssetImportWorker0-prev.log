@@ -1,0 +1,345 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.33f1 (915a7af8b0d5) revision 9525882'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 16326 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\UnityEditors\2020.3.33f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity Projects/Kitchen Sink
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+65189
+Successfully changed project path to: D:/Unity Projects/Kitchen Sink
+D:/Unity Projects/Kitchen Sink
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 70.59 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 0.91 ms.
+Initialize engine version: 2020.3.33f1 (915a7af8b0d5)
+[Subsystems] Discovering subsystems at path D:/UnityEditors/2020.3.33f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/Kitchen Sink/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:   
+    VRAM:     11127 MB
+    Driver:   30.0.14.7168
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'D:/UnityEditors/2020.3.33f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditors/2020.3.33f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/UnityEditors/2020.3.33f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56488
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEditors/2020.3.33f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001092 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 59.67 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 0.03 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.606 seconds
+Domain Reload Profiling:
+	ReloadAssembly (607ms)
+		BeginReloadAssembly (75ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (470ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (136ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (179ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (60ms)
+				BeforeProcessingInitializeOnLoad (15ms)
+				ProcessInitializeOnLoadAttributes (75ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004795 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\Kitchen Sink\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.27 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 0.03 ms.
+[XR] OculusXRPlugin: registering subsystems
+[XR] Unable to register display lifecyle provider: [1]
+[XR] Oculus Input lifecycle provider registered.
+[XR] Unable to register input lifecyle provider: [1]
+[XR] OculusXRPlugin: Failed to load symbol ovrp_GetNodeOrientationValid
+[XR] OculusXRPlugin: Failed to initialize OVRPlugin
+Failed to load OVRPlugin.dll
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+Unity.XR.Oculus.OculusLoader:EditorLoadOVRPlugin () (at Library/PackageCache/com.unity.xr.oculus@1.12.0/Runtime/OculusLoader.cs:238)
+System.Reflection.MonoMethod:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.12.0/Runtime/OculusLoader.cs Line: 238)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.098 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1098ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (906ms)
+			LoadAssemblies (105ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (266ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (384ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (57ms)
+				BeforeProcessingInitializeOnLoad (71ms)
+				ProcessInitializeOnLoadAttributes (233ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.95 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 0.04 ms.
+Unloading 2836 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.4 MB.
+System memory in use after: 125.6 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 3257.
+Total: 35.048900 ms (FindLiveObjects: 0.380600 ms CreateObjectMapping: 0.175600 ms MarkObjects: 34.384400 ms  DeleteObjects: 0.106900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/BNG Framework/Scenes
+  artifactKey: Guid(c4f35859e6089384cbcfbf21e2652484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes using Guid(c4f35859e6089384cbcfbf21e2652484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c4b7b874f6748be123c13fc32af015a') in 0.017276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000494 seconds.
+  path: Assets/BNG Framework/Scenes/Empty.unity
+  artifactKey: Guid(c0900b4a1bfde9547aad7e2e5f2b45b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/Empty.unity using Guid(c0900b4a1bfde9547aad7e2e5f2b45b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '523e9173406f80459352544e8b4905a3') in 0.006786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 560.685642 seconds.
+  path: Assets/BNG Framework/Scenes/Scene Transitioning.unity
+  artifactKey: Guid(9d7c9629abf9c99449e358b0938b47d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/Scene Transitioning.unity using Guid(9d7c9629abf9c99449e358b0938b47d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71fbd09e594fdd58e0811eb795180398') in 0.007932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.142518 seconds.
+  path: Assets/BNG Framework/Scenes/Rigidbody Player.unity
+  artifactKey: Guid(57fc97c5771a777449aa8bd02514df22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/Rigidbody Player.unity using Guid(57fc97c5771a777449aa8bd02514df22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc2a9c741750705f9a52f49e160e2bcd') in 0.006050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.875447 seconds.
+  path: Assets/BNG Framework/Scenes/Physics Hands.unity
+  artifactKey: Guid(34a4579517c578e4080d0a6ef2c96294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/Physics Hands.unity using Guid(34a4579517c578e4080d0a6ef2c96294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a35096fe73a388795bfceb86e86dcd6a') in 0.005249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.647720 seconds.
+  path: Assets/BNG Framework/Third-Party Notices.txt
+  artifactKey: Guid(9ee60cd64d91ea14db623730244d02c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Third-Party Notices.txt using Guid(9ee60cd64d91ea14db623730244d02c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953ef54810cb40675bdfaf411bbe2723') in 0.076224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.211021 seconds.
+  path: Assets/Plugins
+  artifactKey: Guid(d795f0eae2af8944b9a74fa5f726602e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins using Guid(d795f0eae2af8944b9a74fa5f726602e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b36f0faf0e8fd65a8b501d9779607d63') in 0.006039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.864220 seconds.
+  path: Assets/Plugins/RootMotion
+  artifactKey: Guid(4fd4d9fa3ba38f940b91d2af815d1731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/RootMotion using Guid(4fd4d9fa3ba38f940b91d2af815d1731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '048a9f1d54053c5a344ea6c73e52c903') in 0.016428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.645172 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f0440e77a0602052a58dfad917667be') in 0.005757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.219046 seconds.
+  path: Assets/BNG Framework/Scenes/Vehicle Example.unity
+  artifactKey: Guid(d96233ee44d985d4fb8dc23a907c06eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/Vehicle Example.unity using Guid(d96233ee44d985d4fb8dc23a907c06eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7356fed00308846342e6d142e8c9e5e6') in 0.005875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.201740 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo.unity
+  artifactKey: Guid(a1360534006d3f845bc79b46b93cfec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo.unity using Guid(a1360534006d3f845bc79b46b93cfec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e08c362abdaf1f60ce2b9a1b96d408') in 0.005813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.441138 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo
+  artifactKey: Guid(caa8c9cfcb3010e4990c7191fbdbaa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo using Guid(caa8c9cfcb3010e4990c7191fbdbaa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eb2c9c0fd5357e7c44423a6434b4603') in 0.006189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.076178 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/LightingData.asset
+  artifactKey: Guid(fc523aed4ff6cdb4dbc29466bec09eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/LightingData.asset using Guid(fc523aed4ff6cdb4dbc29466bec09eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbe28a365e407b0b8681ee3ac3320caa') in 0.044715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/ReflectionProbe-0.exr
+  artifactKey: Guid(eb4a24578a2eaa14191ac2013668d976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/ReflectionProbe-0.exr using Guid(eb4a24578a2eaa14191ac2013668d976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b29ba1bcb7feb22e71cd774e2a74389') in 0.394460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-6_comp_light.exr
+  artifactKey: Guid(fdc46b5e3ee75f84a9da3f69fcb3dcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-6_comp_light.exr using Guid(fdc46b5e3ee75f84a9da3f69fcb3dcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '108a21633d0cb4114f1158c675513613') in 0.085162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-8_comp_dir.png
+  artifactKey: Guid(a15be29bae53aff408f283a12290de3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-8_comp_dir.png using Guid(a15be29bae53aff408f283a12290de3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c7bc8aff754f420e5b1a3d87165b127') in 0.212414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-6_comp_dir.png
+  artifactKey: Guid(76260c98fae265c4998abc8ce6272ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-6_comp_dir.png using Guid(76260c98fae265c4998abc8ce6272ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a03525f5e94f5ae36c75c956ef0791') in 0.032369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-3_comp_dir.png
+  artifactKey: Guid(55286c1037158774496053c4f3172756) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-3_comp_dir.png using Guid(55286c1037158774496053c4f3172756) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bbd4305fe19532556e2d0e6d89fa81b') in 0.037535 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-5_comp_light.exr
+  artifactKey: Guid(7b19cc787d931854096cba90b6a6936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-5_comp_light.exr using Guid(7b19cc787d931854096cba90b6a6936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3080331134f90e4c3d83eb35ac83ee29') in 0.036309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-8_comp_light.exr
+  artifactKey: Guid(04f8246f752685c438f0339bca129df8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-8_comp_light.exr using Guid(04f8246f752685c438f0339bca129df8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1934a97aaad289cbf6c608b7ddcdeae7') in 0.032194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-1_comp_light.exr
+  artifactKey: Guid(08459a9945b5ec440bca0d75ba0dc375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-1_comp_light.exr using Guid(08459a9945b5ec440bca0d75ba0dc375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3896601311514f056bdb9b4fd440726') in 0.042882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-7_comp_dir.png
+  artifactKey: Guid(a0e4d2e020125304995c42ef291cda55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-7_comp_dir.png using Guid(a0e4d2e020125304995c42ef291cda55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9a75b05413d2ec95b9699aeab82673') in 0.035702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-2_comp_light.exr
+  artifactKey: Guid(72459b1d01c34be47a2e5dbc535d05e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-2_comp_light.exr using Guid(72459b1d01c34be47a2e5dbc535d05e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '590c68724c5ba1a91f12d385ba8f738c') in 0.031269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-0_comp_dir.png
+  artifactKey: Guid(b9b7a96cfbda91545a34834511be757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-0_comp_dir.png using Guid(b9b7a96cfbda91545a34834511be757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a049c220f671fc3f28ffaf01aebb8f8') in 0.047410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-4_comp_light.exr
+  artifactKey: Guid(eedc3f0019a3b5a47a3f144c9fc3fcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-4_comp_light.exr using Guid(eedc3f0019a3b5a47a3f144c9fc3fcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e4f4372c2264ad55168af5de5b5020') in 0.055331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-0_comp_light.exr
+  artifactKey: Guid(1ffa16e348de2e541b325d7abd9f20f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-0_comp_light.exr using Guid(1ffa16e348de2e541b325d7abd9f20f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54cd6cb294b7dc69df7b5326a97b52d2') in 0.034664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-7_comp_light.exr
+  artifactKey: Guid(8693753bc3d6ae74c8824ded46b4bad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-7_comp_light.exr using Guid(8693753bc3d6ae74c8824ded46b4bad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34073c77458930aed0094ad4b05477e0') in 0.058829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-2_comp_dir.png
+  artifactKey: Guid(95a69afc16b892b41b604bef770d59ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-2_comp_dir.png using Guid(95a69afc16b892b41b604bef770d59ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee277a37a9167bf33e0ab99b131c3c60') in 0.045664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-1_comp_dir.png
+  artifactKey: Guid(e3ce09065711ea4428f0dd504ec04e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-1_comp_dir.png using Guid(e3ce09065711ea4428f0dd504ec04e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eab9cd3017c8cda28ce8d95c882f89a5') in 0.045887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-5_comp_dir.png
+  artifactKey: Guid(07f424c5b6a9c9347a45d1c9431f8683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-5_comp_dir.png using Guid(07f424c5b6a9c9347a45d1c9431f8683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c73e8abe21cd45294ead56d6f8a2317') in 0.044417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-3_comp_light.exr
+  artifactKey: Guid(bd6257cc47949ec4fb65ff94f76416dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-3_comp_light.exr using Guid(bd6257cc47949ec4fb65ff94f76416dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905968c4dee4bbfe3ae478dad44e8395') in 0.054356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/BNG Framework/Scenes/XR Demo/Lightmap-4_comp_dir.png
+  artifactKey: Guid(58b6f9145c4b0ca4480fbafaed3ea921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Scenes/XR Demo/Lightmap-4_comp_dir.png using Guid(58b6f9145c4b0ca4480fbafaed3ea921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d6f3074c4ee2b3913fa41010a1c398') in 0.046146 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
