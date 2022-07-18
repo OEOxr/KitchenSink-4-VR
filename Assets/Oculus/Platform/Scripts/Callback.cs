@@ -18,7 +18,11 @@ namespace Oculus.Platform
 
       if (type == Message.MessageType.Notification_Room_InviteAccepted)
       {
-          FlushRoomInviteNotificationQueue();
+        FlushRoomInviteNotificationQueue();
+      }
+      else if (type == Message.MessageType.Notification_GroupPresence_JoinIntentReceived)
+      {
+        FlushJoinIntentNotificationQueue();
       }
     }
 
@@ -30,16 +34,18 @@ namespace Oculus.Platform
 
       notificationCallbacks[type] = new RequestCallback(callback);
     }
-    #endregion 
+    #endregion
 
-    #region OnComplete Callbacks: Exposed through Oculus.Platform.Request
-    internal static void OnComplete<T>(Request<T> request, Message<T>.Callback callback)
+    #region Adding and running request handlers
+    internal static void AddRequest(Request request)
     {
-      requestIDsToCallbacks[request.RequestID] = new RequestCallback<T>(callback);
-    }
-    internal static void OnComplete(Request request, Message.Callback callback)
-    {
-      requestIDsToCallbacks[request.RequestID] = new RequestCallback(callback);
+      if (request.RequestID == 0)
+      {
+        // An early out error happened in the C SDK. Do not add it to the mapping of callbacks
+        Debug.LogError("An unknown error occurred. Request failed.");
+        return;
+      }
+      requestIDsToRequests[request.RequestID] = request;
     }
 
     internal static void RunCallbacks()
@@ -70,10 +76,18 @@ namespace Oculus.Platform
         HandleMessage(msg);
       }
     }
-    #endregion
 
-    #region Callback Internals
-    private static Dictionary<ulong, RequestCallback> requestIDsToCallbacks = new Dictionary<ulong, RequestCallback>();
+    internal static void OnApplicationQuit()
+    {
+      // Clear out all outstanding callbacks
+      requestIDsToRequests.Clear();
+      notificationCallbacks.Clear();
+    }
+
+  #endregion
+
+  #region Callback Internals
+  private static Dictionary<ulong, Request> requestIDsToRequests = new Dictionary<ulong, Request>();
     private static Dictionary<Message.MessageType, RequestCallback> notificationCallbacks = new Dictionary<Message.MessageType, RequestCallback>();
 
     private static bool hasRegisteredRoomInviteNotificationHandler = false;
@@ -84,6 +98,16 @@ namespace Oculus.Platform
             HandleMessage(msg);
         }
         pendingRoomInviteNotifications.Clear();
+    }
+
+    private static bool hasRegisteredJoinIntentNotificationHandler = false;
+    private static Message latestPendingJoinIntentNotifications;
+    private static void FlushJoinIntentNotificationQueue() {
+        hasRegisteredJoinIntentNotificationHandler = true;
+        if (latestPendingJoinIntentNotifications != null) {
+          HandleMessage(latestPendingJoinIntentNotifications);
+        }
+        latestPendingJoinIntentNotifications = null;
     }
 
     private class RequestCallback
@@ -118,14 +142,6 @@ namespace Oculus.Platform
       {
         if (callback != null)
         {
-
-            // We need to queue up GameInvites because the callback runner will be called before a handler has beeen set.
-            if (!hasRegisteredRoomInviteNotificationHandler && msg.Type == Message.MessageType.Notification_Room_InviteAccepted)
-            {
-                pendingRoomInviteNotifications.Add(msg);
-                return;
-            }
-
           if (msg is Message<T>)
           {
             callback((Message<T>)msg);
@@ -138,24 +154,32 @@ namespace Oculus.Platform
       }
     }
 
-    private static void HandleMessage(Message msg)
+    internal static void HandleMessage(Message msg)
     {
-      RequestCallback callbackHolder;
-      if (requestIDsToCallbacks.TryGetValue(msg.RequestID, out callbackHolder))
-      {
-        try
-        {
-          callbackHolder.HandleMessage(msg);
+      Request request;
+      if (msg.RequestID != 0 && requestIDsToRequests.TryGetValue(msg.RequestID, out request)) {
+        try {
+          request.HandleMessage(msg);
+        } finally {
+          requestIDsToRequests.Remove(msg.RequestID);
         }
-        // even if there are exceptions, we should clean up cleanly
-        finally
-        {
-          requestIDsToCallbacks.Remove(msg.RequestID);
-        }
+        return;
       }
-      else if (notificationCallbacks.TryGetValue(msg.Type, out callbackHolder))
+
+      RequestCallback callbackHolder;
+      if (notificationCallbacks.TryGetValue(msg.Type, out callbackHolder))
       {
         callbackHolder.HandleMessage(msg);
+      }
+      // We need to queue up Join Intents because the callback runner will be called before a handler has beeen set.
+      else if (!hasRegisteredJoinIntentNotificationHandler && msg.Type == Message.MessageType.Notification_GroupPresence_JoinIntentReceived)
+      {
+        latestPendingJoinIntentNotifications = msg;
+      }
+      // We need to queue up GameInvites because the callback runner will be called before a handler has beeen set.
+      else if (!hasRegisteredRoomInviteNotificationHandler && msg.Type == Message.MessageType.Notification_Room_InviteAccepted)
+      {
+        pendingRoomInviteNotifications.Add(msg);
       }
     }
 

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/BNG Framework/Scenes/Physics Hands.unity
+- path: Assets/BNG Framework/Scenes/XR Demo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

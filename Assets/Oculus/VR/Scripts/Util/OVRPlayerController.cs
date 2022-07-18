@@ -1,10 +1,8 @@
 /************************************************************************************
 Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
 
-Licensed under the Oculus Utilities SDK License Version 1.31 (the "License"); you may not use
-the Utilities SDK except in compliance with the License, which is provided at the time of installation
-or download, or which otherwise accompanies this software in either electronic or hard copy form.
-You may obtain a copy of the License at https://developer.oculus.com/licenses/utilities-1.31
+Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
+https://developer.oculus.com/licenses/oculussdk/
 
 Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
 under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
@@ -56,6 +54,16 @@ public class OVRPlayerController : MonoBehaviour
 	/// </summary>
 	[Tooltip("The player will rotate in fixed steps if Snap Rotation is enabled.")]
 	public bool SnapRotation = true;
+
+	/// <summary>
+	/// [Deprecated] When enabled, snap rotation will happen about the guardian rather
+	/// than the player/camera viewpoint.
+	/// </summary>
+	[Tooltip("[Deprecated] When enabled, snap rotation will happen about the center of the " +
+		"guardian rather than the center of the player/camera viewpoint. This (legacy) " +
+		"option should be left off except for edge cases that require extreme behavioral " +
+		"backwards compatibility.")]
+	public bool RotateAroundGuardianCenter = false;
 
 	/// <summary>
 	/// How many fixed speeds to use with linear movement? 0=linear control
@@ -149,6 +157,7 @@ public class OVRPlayerController : MonoBehaviour
 	private float SimulationRate = 60f;
 	private float buttonRotation = 0f;
 	private bool ReadyToSnapTurn; // Set to true when a snap turn has occurred, code requires one frame of centered thumbstick to enable another snap turn.
+	private bool playerControllerEnabled = false;
 
 	void Start()
 	{
@@ -181,32 +190,50 @@ public class OVRPlayerController : MonoBehaviour
 
 	void OnEnable()
 	{
-		OVRManager.display.RecenteredPose += ResetOrientation;
-
-		if (CameraRig != null)
-		{
-			CameraRig.UpdatedAnchors += UpdateTransform;
-		}
 	}
 
 	void OnDisable()
 	{
-		OVRManager.display.RecenteredPose -= ResetOrientation;
-
-		if (CameraRig != null)
+		if (playerControllerEnabled)
 		{
-			CameraRig.UpdatedAnchors -= UpdateTransform;
+			OVRManager.display.RecenteredPose -= ResetOrientation;
+
+			if (CameraRig != null)
+			{
+				CameraRig.UpdatedAnchors -= UpdateTransform;
+			}
+			playerControllerEnabled = false;
 		}
 	}
 
 	void Update()
 	{
+		if (!playerControllerEnabled)
+		{
+			if (OVRManager.OVRManagerinitialized)
+			{
+				OVRManager.display.RecenteredPose += ResetOrientation;
+
+				if (CameraRig != null)
+				{
+					CameraRig.UpdatedAnchors += UpdateTransform;
+				}
+				playerControllerEnabled = true;
+			}
+			else
+				return;
+		}
+
+		//todo: enable for Unity Input System
+#if ENABLE_LEGACY_INPUT_MANAGER
+
 		//Use keys to ratchet rotation
 		if (Input.GetKeyDown(KeyCode.Q))
 			buttonRotation -= RotationRatchet;
 
 		if (Input.GetKeyDown(KeyCode.E))
 			buttonRotation += RotationRatchet;
+#endif
 	}
 
 	protected virtual void UpdateController()
@@ -300,6 +327,8 @@ public class OVRPlayerController : MonoBehaviour
 
 	public virtual void UpdateMovement()
 	{
+		//todo: enable for Unity Input System
+#if ENABLE_LEGACY_INPUT_MANAGER
 		if (HaltUpdateMovement)
 			return;
 
@@ -393,7 +422,7 @@ public class OVRPlayerController : MonoBehaviour
 
 		if (EnableRotation)
 		{
-			Vector3 euler = transform.rotation.eulerAngles;
+			Vector3 euler = RotateAroundGuardianCenter ? transform.rotation.eulerAngles : Vector3.zero;
 			float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
 
 			bool curHatLeft = OVRInput.Get(OVRInput.Button.PrimaryShoulder);
@@ -458,8 +487,16 @@ public class OVRPlayerController : MonoBehaviour
 				euler.y += secondaryAxis.x * rotateInfluence;
 			}
 
-			transform.rotation = Quaternion.Euler(euler);
+			if (RotateAroundGuardianCenter)
+			{
+				transform.rotation = Quaternion.Euler(euler);
+			}
+			else
+			{
+				transform.RotateAround(CameraRig.centerEyeAnchor.position, Vector3.up, euler.y);
+			}
 		}
+#endif
 	}
 
 
